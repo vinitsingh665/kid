@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Games", href: "/games" },
@@ -62,19 +63,19 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 gap-1 xl:gap-4">
 
           {/* Logo */}
-          <a href="/" id="nav-logo" className="flex items-center gap-1.5 shrink-0">
+          <Link href="/" id="nav-logo" className="flex items-center gap-1.5 shrink-0">
             <KidzooIcon size={34} />
             <span className="text-xl font-black tracking-tight leading-none">
               <span className="text-[#FF6B35]">Kid</span>
               <span className="text-[#4ECDC4]">z</span>
               <span className="text-[#A855F7]">oo</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links — visible only at xl+ */}
           <nav className="hidden xl:flex items-center gap-3.5 flex-1 justify-start ml-4" aria-label="Main navigation">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className={`text-sm font-semibold transition-all duration-200 px-3 py-1.5 rounded-full whitespace-nowrap ${
@@ -85,7 +86,7 @@ export default function Navbar() {
                 id={`nav-${link.label.toLowerCase()}`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -145,7 +146,7 @@ export default function Navbar() {
           <nav className="xl:hidden pb-4 pt-3 bg-white rounded-b-2xl border-t border-gray-100" aria-label="Mobile navigation">
             <div className="flex flex-col gap-0.5">
               {navLinks.map((link) => (
-                <a key={link.label} href={link.href} id={`mobile-nav-${link.label.toLowerCase()}`}
+                <Link key={link.label} href={link.href} id={`mobile-nav-${link.label.toLowerCase()}`}
                   className={`px-3 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                     pathname.startsWith(link.href)
                       ? "text-[#FF6B35] bg-orange-50"
@@ -153,7 +154,7 @@ export default function Navbar() {
                   }`}
                   onClick={() => setMenuOpen(false)}>
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="flex gap-3 mt-3 px-3">
                 <button className="flex-1 py-2.5 rounded-full border-2 border-gray-200 text-sm font-bold text-gray-700 hover:border-[#FF6B35] hover:text-[#FF6B35] transition-colors">Sign In</button>

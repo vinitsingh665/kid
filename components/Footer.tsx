@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 const quickLinks = [
   { id: "footer-games", label: "Games", href: "/games" },
@@ -13,17 +14,17 @@ const quickLinks = [
 
 const forParents = [
   { id: "footer-parenting-tips", label: "Parenting Tips", href: "/parenting" },
-  { id: "footer-age-guide", label: "Age Guide", href: "#" },
+  { id: "footer-age-guide", label: "Age Guide", href: "/ageguide" },
   { id: "footer-learning-resources", label: "Learning Resources", href: "#" },
-  { id: "footer-safety-privacy", label: "Safety & Privacy", href: "#" },
-  { id: "footer-faqs", label: "FAQs", href: "#" },
-  { id: "footer-contact-us", label: "Contact Us", href: "#" },
+  { id: "footer-safety-privacy", label: "Safety & Privacy", href: "/safety" },
+  { id: "footer-faqs", label: "FAQs", href: "/faqs" },
+  { id: "footer-contact-us", label: "Contact Us", href: "/contact" },
 ];
 
 const legal = [
-  { id: "footer-privacy-policy", label: "Privacy Policy", href: "#" },
-  { id: "footer-terms", label: "Terms of Service", href: "#" },
-  { id: "footer-cookie-policy", label: "Cookie Policy", href: "#" },
+  { id: "footer-privacy-policy", label: "Privacy Policy", href: "/privacy-policy" },
+  { id: "footer-terms", label: "Terms of Service", href: "/terms-of-service" },
+  { id: "footer-cookie-policy", label: "Cookie Policy", href: "/cookie-policy" },
   { id: "footer-child-safety", label: "Child Safety", href: "#" },
   { id: "footer-disclaimer", label: "Disclaimer", href: "#" },
 ];
@@ -128,14 +129,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 mb-10">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <a href="/" id="footer-logo" className="flex items-center gap-1 mb-4">
+            <Link href="/" id="footer-logo" className="flex items-center gap-1 mb-4">
               <span className="text-2xl font-black">
                 <span className="text-[#38BDF8]">Kid</span>
                 <span className="text-[#4ADE80]">z</span>
                 <span className="text-[#FCD34D]">oo</span>
               </span>
               <span className="text-xl">🦁</span>
-            </a>
+            </Link>
             <p className="text-white/70 text-xs leading-relaxed max-w-xs">
               A joyful place for kids to learn, play, create and explore. Fun content for curious minds and helpful resources for parents.
             </p>
@@ -162,13 +163,13 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
-                  <a
+                  <Link
                     id={link.id}
                     href={link.href}
                     className="text-white/70 text-xs hover:text-white transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -180,13 +181,13 @@ export default function Footer() {
             <ul className="space-y-2">
               {forParents.map((link) => (
                 <li key={link.id}>
-                  <a
+                  <Link
                     id={link.id}
                     href={link.href}
                     className="text-white/70 text-xs hover:text-white transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -198,13 +199,13 @@ export default function Footer() {
             <ul className="space-y-2">
               {legal.map((link) => (
                 <li key={link.id}>
-                  <a
+                  <Link
                     id={link.id}
                     href={link.href}
                     className="text-white/70 text-xs hover:text-white transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
