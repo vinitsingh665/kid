@@ -5,6 +5,7 @@ import LearnCategoryBar from "@/components/learn/LearnCategoryBar";
 import LearnSidebar from "@/components/learn/LearnSidebar";
 import LearnContent from "@/components/learn/LearnContent";
 import MobileLearnFilterModal from "@/components/learn/MobileLearnFilterModal";
+import LearnNewsletter from "@/components/learn/LearnNewsletter";
 
 export const metadata = {
   title: "Learn - KidZoo",
@@ -47,6 +48,8 @@ export default function LearnPage() {
             {/* Main Learn Content */}
             <LearnContent />
           </div>
+
+          <LearnNewsletter />
         </div>
       </main>
 

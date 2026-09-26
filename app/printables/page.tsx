@@ -5,6 +5,7 @@ import PrintablesCategoryBar from "@/components/printables/PrintablesCategoryBar
 import PrintablesSidebar from "@/components/printables/PrintablesSidebar";
 import PrintablesContent from "@/components/printables/PrintablesContent";
 import MobilePrintablesFilterModal from "@/components/printables/MobilePrintablesFilterModal";
+import PrintablesNewsletter from "@/components/printables/PrintablesNewsletter";
 
 export default function PrintablesPage() {
   return (
@@ -23,6 +24,9 @@ export default function PrintablesPage() {
             </div>
             <PrintablesContent />
           </div>
+
+          {/* Newsletter — outside the flex row so it always renders at full width */}
+          <PrintablesNewsletter />
         </div>
       </main>
       <Footer />

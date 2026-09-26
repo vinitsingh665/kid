@@ -92,27 +92,6 @@ export default function PrintablesContent() {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
-
-      {/* Keep Learning Banner (Get 20 Free Printables) */}
-      <section className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl sm:rounded-[32px] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm border border-pink-100 mt-12">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-4xl">
-            🎁
-          </div>
-          <div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#0B2046] mb-1">Get 20 Free Printables!</h2>
-            <p className="text-gray-600 text-sm">Join thousands of parents and get a free activity pack in your inbox.</p>
-          </div>
-        </div>
-        
-        <div className="flex flex-col sm:flex-row items-center gap-2 w-full md:w-auto">
-           <input type="email" placeholder="Enter your email address" className="w-full md:w-[250px] px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm" />
-           <button className="w-full sm:w-auto bg-[#0B2046] text-white font-bold px-6 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow-sm whitespace-nowrap">
-             Subscribe
-           </button>
-        </div>
-      </section>
-
     </div>
   );
 }

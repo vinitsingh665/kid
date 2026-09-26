@@ -135,42 +135,6 @@ export default function LearnContent() {
           ))}
         </div>
       </section>
-
-      {/* Keep Learning Banner */}
-      <section className="bg-gradient-to-r from-purple-100 to-indigo-50 rounded-2xl sm:rounded-[32px] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm border border-purple-50">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-4xl">
-            🏆
-          </div>
-          <div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#0B2046] mb-1">Keep Learning, Keep Growing!</h2>
-            <p className="text-gray-600 text-sm">Complete lessons, take quizzes and earn rewards.</p>
-          </div>
-        </div>
-        
-        <div className="flex items-center gap-2 sm:gap-4 w-full sm:w-auto overflow-x-auto sm:overflow-visible pb-2 sm:pb-0">
-           <div className="flex flex-col items-center gap-2 min-w-[60px]">
-             <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-yellow-500">⭐</div>
-             <span className="text-[10px] font-bold text-gray-600">Learn</span>
-           </div>
-           <div className="w-8 sm:w-12 h-0.5 bg-purple-200" />
-           <div className="flex flex-col items-center gap-2 min-w-[60px]">
-             <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-green-500">✅</div>
-             <span className="text-[10px] font-bold text-gray-600">Complete</span>
-           </div>
-           <div className="w-8 sm:w-12 h-0.5 bg-purple-200" />
-           <div className="flex flex-col items-center gap-2 min-w-[60px]">
-             <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-blue-500">🏅</div>
-             <span className="text-[10px] font-bold text-gray-600">Earn Badges</span>
-           </div>
-           <div className="w-8 sm:w-12 h-0.5 bg-purple-200" />
-           <div className="flex flex-col items-center gap-2 min-w-[60px] opacity-50">
-             <div className="w-10 h-10 rounded-full bg-white/50 border border-purple-200 flex items-center justify-center text-gray-400">🔒</div>
-             <span className="text-[10px] font-bold text-gray-500">Unlock More</span>
-           </div>
-        </div>
-      </section>
-
     </div>
   );
 }

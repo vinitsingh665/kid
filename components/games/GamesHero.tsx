@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GamesHero() {
   return (
@@ -8,7 +9,7 @@ export default function GamesHero() {
           Uses phgamehero.png — portrait 1086×1448
       ══════════════════════════════════════════════ */}
       <section
-        className="relative w-full overflow-hidden lg:hidden flex flex-col justify-between"
+        className="relative w-full overflow-hidden md:hidden flex flex-col justify-between"
         style={{ minHeight: "450px", height: "125vw", maxHeight: "600px" }}
         aria-labelledby="games-hero-heading-mobile"
       >
@@ -32,8 +33,14 @@ export default function GamesHero() {
 
         <div
           className="relative z-10 flex flex-col justify-start px-5"
-          style={{ paddingTop: "80px" }}
+          style={{ paddingTop: "60px" }}
         >
+          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-gray-800 mb-4 bg-white/70 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm w-max">
+            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+            <span>›</span>
+            <span className="text-[#0B2046]">Games</span>
+          </div>
+
           <h1
             id="games-hero-heading-mobile"
             className="text-3xl font-black leading-tight tracking-tight text-[#0f172a] mb-2"
@@ -47,20 +54,20 @@ export default function GamesHero() {
           </p>
 
           <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 bg-gradient-to-r from-white via-white/80 to-transparent rounded-l-full px-3 py-1.5 w-[180px]">
-              <div className="w-5 flex justify-center text-blue-500 text-lg">🎮</div>
+            <div className="flex items-center gap-2 bg-gradient-to-r from-white via-white/80 to-transparent rounded-l-full px-3 py-1.5 w-[180px] transition-transform hover:-translate-y-1 active:scale-95 cursor-default">
+              <div className="w-5 flex justify-center text-xl">🎮</div>
               <span className="text-[10px] font-bold leading-tight">
                 100+<br/><span className="text-gray-500 font-normal">Games</span>
               </span>
             </div>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-white via-white/80 to-transparent rounded-l-full px-3 py-1.5 w-[180px]">
-              <div className="w-5 flex justify-center text-amber-400 text-lg">⭐</div>
+            <div className="flex items-center gap-2 bg-gradient-to-r from-white via-white/80 to-transparent rounded-l-full px-3 py-1.5 w-[180px] transition-transform hover:-translate-y-1 active:scale-95 cursor-default">
+              <div className="w-5 flex justify-center text-xl">⭐</div>
               <span className="text-[10px] font-bold leading-tight">
                 100%<br/><span className="text-gray-500 font-normal">Safe & Ad-Light</span>
               </span>
             </div>
-            <div className="flex items-center gap-2 bg-gradient-to-r from-white via-white/80 to-transparent rounded-l-full px-3 py-1.5 w-[180px]">
-              <div className="w-5 flex justify-center text-pink-400 text-lg">❤️</div>
+            <div className="flex items-center gap-2 bg-gradient-to-r from-white via-white/80 to-transparent rounded-l-full px-3 py-1.5 w-[180px] transition-transform hover:-translate-y-1 active:scale-95 cursor-default">
+              <div className="w-5 flex justify-center text-xl">❤️</div>
               <span className="text-[10px] font-bold leading-tight">
                 Learn<br/><span className="text-gray-500 font-normal">While You Play</span>
               </span>
@@ -74,12 +81,8 @@ export default function GamesHero() {
           Uses gamehero.png — landscape 2079×756
       ══════════════════════════════════════════════ */}
       <section
-        className="relative w-full overflow-hidden pb-24 hidden lg:block"
-        style={{
-          aspectRatio: "2079 / 756",
-          maxHeight: "600px",
-          minHeight: "400px",
-        }}
+        className="relative w-full overflow-hidden hidden md:block pb-12"
+        style={{ minHeight: "560px" }}
         aria-labelledby="games-hero-heading"
       >
         <Image
@@ -87,7 +90,7 @@ export default function GamesHero() {
           alt="Kids playing games on KidZoo"
           fill
           priority
-          className="object-cover object-top"
+          className="object-cover object-right"
           sizes="(max-width: 1024px) 100vw, 100vw"
         />
 
@@ -100,14 +103,18 @@ export default function GamesHero() {
         />
 
         <div
-          className="absolute inset-0 z-10 flex items-center"
-          style={{ paddingTop: "64px" }}
+          className="absolute inset-0 z-10 flex flex-col justify-start pt-[100px] lg:pt-[120px] px-4 sm:px-10 lg:px-16 pb-12"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-            <div className="max-w-md lg:max-w-[45%]">
-              <h1
-                id="games-hero-heading"
-                className="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#0f172a] mb-4"
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-2 text-sm font-bold text-gray-800 mb-6 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm w-max">
+              <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+              <span>›</span>
+              <span className="text-[#0B2046]">Games</span>
+            </div>
+
+            <h1
+              id="games-hero-heading"
+              className="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#0f172a] mb-4"
               >
                 Fun Games
                 <br />
@@ -118,28 +125,27 @@ export default function GamesHero() {
               </p>
 
               <div className="flex flex-wrap items-center gap-3">
-                <div className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm transition-transform hover:-translate-y-1 min-w-[170px]">
-                  <div className="w-6 flex justify-center text-blue-500 text-xl">🎮</div>
-                  <span className="text-xs font-bold leading-tight">
+                <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100 transition-transform hover:-translate-y-1 cursor-default">
+                  <span className="text-xl">🎮</span>
+                  <span className="text-xs font-bold text-gray-800 leading-tight">
                     100+<br/><span className="text-gray-500 font-normal">Games</span>
                   </span>
                 </div>
-                <div className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm transition-transform hover:-translate-y-1 min-w-[170px]">
-                  <div className="w-6 flex justify-center text-amber-400 text-xl">⭐</div>
-                  <span className="text-xs font-bold leading-tight">
+                <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100 transition-transform hover:-translate-y-1 cursor-default">
+                  <span className="text-xl">⭐</span>
+                  <span className="text-xs font-bold text-gray-800 leading-tight">
                     100%<br/><span className="text-gray-500 font-normal">Safe & Ad-Light</span>
                   </span>
                 </div>
-                <div className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm transition-transform hover:-translate-y-1 min-w-[170px]">
-                  <div className="w-6 flex justify-center text-pink-400 text-xl">❤️</div>
-                  <span className="text-xs font-bold leading-tight">
+                <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100 transition-transform hover:-translate-y-1 cursor-default">
+                  <span className="text-xl">❤️</span>
+                  <span className="text-xs font-bold text-gray-800 leading-tight">
                     Learn<br/><span className="text-gray-500 font-normal">While You Play</span>
                   </span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </section>
     </>
   );

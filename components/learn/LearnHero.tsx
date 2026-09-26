@@ -5,7 +5,7 @@ export default function LearnHero() {
   return (
     <>
       {/* Desktop Hero */}
-      <section className="relative w-full hidden lg:block overflow-hidden rounded-b-[32px] shadow-sm h-[400px] xl:h-[450px]">
+      <section className="relative w-full overflow-hidden hidden md:block pb-12" style={{ minHeight: "560px" }}>
         <Image
           src="/learnhero.png"
           alt="Learn Hero"
@@ -18,12 +18,12 @@ export default function LearnHero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent w-[60%]" />
         
         {/* Content */}
-        <div className="absolute inset-0 z-10 flex items-center max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 z-10 flex flex-col justify-start pt-[100px] lg:pt-[120px] px-4 sm:px-10 lg:px-16 pb-12">
           <div className="max-w-xl">
             <div className="flex items-center gap-2 text-sm font-bold text-gray-800 mb-6 bg-white/50 backdrop-blur-sm w-max px-3 py-1.5 rounded-full shadow-sm">
-              <span className="text-blue-600">🎓</span>
-              <span className="text-gray-500">Home &gt;</span>
-              <span>Learn</span>
+              <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+              <span>›</span>
+              <span className="text-[#0B2046]">Learn</span>
             </div>
             
             <h1 className="text-5xl xl:text-6xl font-black text-[#0B2046] leading-[1.1] mb-6 tracking-tight drop-shadow-sm">
@@ -57,7 +57,7 @@ export default function LearnHero() {
       </section>
 
       {/* Mobile Hero */}
-      <section className="relative w-full overflow-hidden lg:hidden flex flex-col justify-between" style={{ minHeight: "500px", height: "125vw", maxHeight: "600px" }}>
+      <section className="relative w-full overflow-hidden md:hidden flex flex-col justify-between" style={{ minHeight: "500px", height: "125vw", maxHeight: "600px" }}>
         <Image
           src="/phlearnhero.png"
           alt="Learn Mobile Hero"
@@ -79,9 +79,9 @@ export default function LearnHero() {
           style={{ paddingTop: "60px" }}
         >
           <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-gray-800 mb-4 bg-white/70 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm w-max">
-            <span className="text-blue-600">🎓</span>
-            <span className="text-gray-500">Home &gt;</span>
-            <span>Learn</span>
+            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+            <span>›</span>
+            <span className="text-[#0B2046]">Learn</span>
           </div>
           
           <h1

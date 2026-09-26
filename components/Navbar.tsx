@@ -1,15 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Games", href: "/games" },
   { label: "Printables", href: "/printables" },
   { label: "Learn", href: "/learn" },
-  { label: "Stories", href: "#stories" },
-  { label: "Activities", href: "#activities" },
-  { label: "Experiments", href: "#experiments" },
-  { label: "Explore", href: "#explore" },
+  { label: "Stories", href: "/stories" },
+  { label: "Activities", href: "/activities" },
+  { label: "Experiments", href: "/experiments" },
+  { label: "Explore", href: "/explore" },
 ];
 
 function KidzooIcon({ size = 32 }: { size?: number }) {
@@ -39,6 +40,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname() || "";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -56,8 +58,8 @@ export default function Navbar() {
         boxShadow: scrolled ? "0 1px 12px rgba(0,0,0,0.08)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 gap-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6">
+        <div className="flex items-center justify-between h-16 gap-1 xl:gap-4">
 
           {/* Logo */}
           <a href="/" id="nav-logo" className="flex items-center gap-1.5 shrink-0">
@@ -69,13 +71,17 @@ export default function Navbar() {
             </span>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-5 flex-1 justify-start ml-6" aria-label="Main navigation">
+          {/* Desktop Nav Links — visible only at xl+ */}
+          <nav className="hidden xl:flex items-center gap-3.5 flex-1 justify-start ml-4" aria-label="Main navigation">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-semibold text-gray-800 hover:text-[#FF6B35] transition-colors"
+                className={`text-sm font-semibold transition-all duration-200 px-3 py-1.5 rounded-full whitespace-nowrap ${
+                  pathname.startsWith(link.href)
+                    ? "bg-white text-[#FF6B35] shadow-sm border border-gray-100"
+                    : "text-gray-800 hover:text-[#FF6B35] hover:bg-white/80"
+                }`}
                 id={`nav-${link.label.toLowerCase()}`}
               >
                 {link.label}
@@ -83,13 +89,13 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop Right */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          {/* Desktop Right — visible only at xl+ */}
+          <div className="hidden xl:flex items-center gap-3 shrink-0">
             <div className="relative">
               <input
                 type="text"
                 id="nav-search"
-                placeholder="Search games, worksheets, stories..."
+                placeholder="Search games, worksheets..."
                 className="w-56 pl-4 pr-9 py-2 text-sm bg-white/80 backdrop-blur-sm rounded-full border border-gray-200 focus:outline-none focus:border-[#4ECDC4] focus:bg-white transition-all duration-200 placeholder:text-gray-400"
               />
               <button className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#FF6B35] transition-colors" aria-label="Search" id="nav-search-btn">
@@ -98,7 +104,7 @@ export default function Navbar() {
                 </svg>
               </button>
             </div>
-            <button id="nav-signin" className="text-sm font-bold text-gray-800 hover:text-[#FF6B35] transition-colors whitespace-nowrap">
+            <button id="nav-signin" className="text-sm font-bold text-gray-800 hover:text-[#FF6B35] bg-white border border-gray-200 shadow-sm px-4 py-2 rounded-full transition-colors whitespace-nowrap">
               Sign In
             </button>
             <button id="nav-get-started" className="btn-primary text-sm px-5 py-2 whitespace-nowrap">
@@ -106,8 +112,8 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-2">
+          {/* Mobile/Tablet Actions — visible below xl */}
+          <div className="flex xl:hidden items-center gap-2">
             <button id="mobile-search-btn" onClick={() => setSearchOpen(!searchOpen)} className="p-2 rounded-full hover:bg-black/10 transition-colors" aria-label="Toggle search">
               <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -124,7 +130,7 @@ export default function Navbar() {
 
         {/* Mobile Search */}
         {searchOpen && (
-          <div className="lg:hidden pb-3 bg-white px-2 rounded-b-2xl">
+          <div className="xl:hidden pb-3 bg-white px-2 rounded-b-2xl">
             <div className="relative">
               <input id="mobile-search-input" type="text" placeholder="Search games, worksheets..." className="w-full pl-4 pr-10 py-2.5 text-sm bg-gray-50 rounded-full border border-gray-200 focus:outline-none focus:border-[#4ECDC4]" />
               <button className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" aria-label="Search">
@@ -136,11 +142,15 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <nav className="lg:hidden pb-4 pt-3 bg-white rounded-b-2xl border-t border-gray-100" aria-label="Mobile navigation">
+          <nav className="xl:hidden pb-4 pt-3 bg-white rounded-b-2xl border-t border-gray-100" aria-label="Mobile navigation">
             <div className="flex flex-col gap-0.5">
               {navLinks.map((link) => (
                 <a key={link.label} href={link.href} id={`mobile-nav-${link.label.toLowerCase()}`}
-                  className="px-3 py-2.5 text-sm font-semibold text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50 rounded-lg transition-colors"
+                  className={`px-3 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
+                    pathname.startsWith(link.href)
+                      ? "text-[#FF6B35] bg-orange-50"
+                      : "text-gray-700 hover:text-[#FF6B35] hover:bg-orange-50"
+                  }`}
                   onClick={() => setMenuOpen(false)}>
                   {link.label}
                 </a>

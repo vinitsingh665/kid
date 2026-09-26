@@ -12,7 +12,7 @@ const quickLinks = [
 ];
 
 const forParents = [
-  { id: "footer-parenting-tips", label: "Parenting Tips", href: "#" },
+  { id: "footer-parenting-tips", label: "Parenting Tips", href: "/parenting" },
   { id: "footer-age-guide", label: "Age Guide", href: "#" },
   { id: "footer-learning-resources", label: "Learning Resources", href: "#" },
   { id: "footer-safety-privacy", label: "Safety & Privacy", href: "#" },
