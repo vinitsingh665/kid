@@ -26,7 +26,7 @@ const legal = [
   { id: "footer-terms", label: "Terms of Service", href: "/terms-of-service" },
   { id: "footer-cookie-policy", label: "Cookie Policy", href: "/cookie-policy" },
   { id: "footer-child-safety", label: "Child Safety", href: "#" },
-  { id: "footer-disclaimer", label: "Disclaimer", href: "#" },
+  { id: "footer-disclaimer", label: "Disclaimer", href: "/disclaimer" },
 ];
 
 const socialLinks = [
@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Desktop Image (hidden on mobile) */}
         <div className="hidden lg:block relative w-full h-full">
           <Image
-            src="/footer.png"
+            src="/mainfooter.png"
             alt="Night reading scene with kids and dog"
             fill
             className="object-cover object-right-bottom"
